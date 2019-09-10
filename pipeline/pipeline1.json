@@ -1,0 +1,23 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set Variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "SimpleVar",
+					"value": "@concat(pipeline().Pipeline,pipeline().RunId)"
+				}
+			}
+		],
+		"variables": {
+			"SimpleVar": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
