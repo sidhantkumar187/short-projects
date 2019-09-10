@@ -9,12 +9,28 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "SimpleVar",
-					"value": "@concat(pipeline().Pipeline,pipeline().RunId)"
+					"value": {
+						"value": "@concat(pipeline().Pipeline,pipeline().RunId)",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Set Variable2",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "SimpleVar2",
+					"value": "@concat(pipeline().TriggerType,pipeline().TriggerName)"
 				}
 			}
 		],
 		"variables": {
 			"SimpleVar": {
+				"type": "String"
+			},
+			"SimpleVar2": {
 				"type": "String"
 			}
 		},
